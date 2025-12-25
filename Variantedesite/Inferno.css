@@ -1,0 +1,56 @@
+/* --- THEME : INFERNO --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  /* Fond Rouge très sombre */
+  --background-start-rgb: 20, 0, 0; 
+  --background-end-rgb: 0, 0, 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  font-family: 'Montserrat', sans-serif; /* Police plus forte */
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Grain cinéma intense */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.07'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 50;
+  mix-blend-mode: overlay;
+}
+
+/* Scrollbar Rouge */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #dc2626; border-radius: 2px; }
+
+/* Texte dégradé Feu */
+.text-gradient-gold {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #f87171, #ef4444, #b91c1c); /* Rouge clair -> Rouge sang */
+}
+
+.glass-panel {
+  background: rgba(50, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }

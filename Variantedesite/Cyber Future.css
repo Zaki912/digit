@@ -1,0 +1,59 @@
+/* --- THEME : CYBER FUTURE --- */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  /* Fond Bleu Nuit Profond */
+  --background-start-rgb: 2, 6, 23;  /* Slate 950 */
+  --background-end-rgb: 10, 10, 30;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  font-family: 'Outfit', sans-serif; /* Police plus futuriste */
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Texture "Matrix" subtile */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 50;
+  mix-blend-mode: overlay;
+}
+
+/* Scrollbar Néon */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #020617; }
+::-webkit-scrollbar-thumb { 
+  background: #3b82f6; 
+  border-radius: 4px; 
+}
+
+/* Classe utilitaire pour le texte dégradé (Remplace l'Or par Bleu/Violet) */
+.text-gradient-gold {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #60a5fa, #a855f7, #ec4899); /* Bleu -> Violet -> Rose */
+}
+
+.glass-panel {
+  background: rgba(30, 41, 59, 0.4); /* Plus bleuté */
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }

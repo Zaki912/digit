@@ -1,0 +1,46 @@
+/* --- THEME : PLATINUM --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  /* Noir Absolu */
+  --background-start-rgb: 0, 0, 0; 
+  --background-end-rgb: 20, 20, 20;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar Grise/Argent */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #525252; border-radius: 10px; }
+
+/* Texte dégradé Argent/Blanc */
+.text-gradient-gold {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #ffffff, #9ca3af, #6b7280); /* Blanc -> Gris */
+}
+
+/* Effet Verre très propre */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
